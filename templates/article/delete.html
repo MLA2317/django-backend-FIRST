@@ -1,0 +1,14 @@
+{% extends  'base.html' %}
+
+{% block title %} Delete article {% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            rostdanxam siz <b>{{ object.title }}</b>ni ochirmoqchimisiz?
+        </p>
+            <a class="btn btn-secondary" href="{% url 'articles:list' %}">Yo'q</a>
+            <button type="submit" style="background-color: red">Ha</button>
+    </form>
+{% endblock %}

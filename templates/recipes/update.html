@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Recipe Update {% endblock %}
+
+{% block content %}
+
+    <form method="post">
+    {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+                {{ form.title }}
+        </div>
+          <div class="mb-3">
+               {{ form.is_active }}
+            <label for="id_is_active" class="form-label">Is active</label>
+        </div>
+        <div class="mb-3 form-check">
+            <label class="form-check-label" for="exampleCheck2">Tags</label>
+            {{ form.tags }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock %}

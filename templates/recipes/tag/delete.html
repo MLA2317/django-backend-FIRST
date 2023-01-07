@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Recipe Delete {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="card">
+              <div class="card-body color-danger">
+                    Are you really delete <strong>{{ object.title }}</strong> ?
+              </div>
+            </div>
+            <div class="button-group mt-3">
+              <a href="{% url 'recipes:tag_detail' object.id %}" class="btn btn-secondary">Yoq</a>
+              <button type="submit" class="btn btn-primary">Ha</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
